@@ -1,7 +1,7 @@
 package com.afeiyyt;
 
 /**
- *
+ * Created by afeiyyt on 2019/5/7.
  */
 public class Animal implements Talking {
     private String name;
