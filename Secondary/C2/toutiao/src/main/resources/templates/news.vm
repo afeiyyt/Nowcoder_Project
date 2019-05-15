@@ -1,0 +1,50 @@
+<html>
+<body>
+<pre>
+Hello VM.
+
+##注释
+#*块注释
+*#
+
+$!{value1}
+$!{value2}
+${value3}
+
+#foreach ($color in $colors)
+Color $!{foreach.index}/$!{foreach.count}: $!{color}
+#end
+
+#foreach ($key in $map.keySet())
+Number $!{foreach.index}/$!{foreach.count}: $!{key} $map.get($key)
+#end
+
+#foreach ($kv in $map.entrySet())
+Number $!{foreach.index}/$!{foreach.count}: $!{kv.key} $!{kv.value}
+#end
+
+User:$!{user.name}
+User:$!{user.getName()}
+
+#set($title = "nowcoder")
+Include: #include("header.vm") <br> ##包含文本无参数
+Parse: #parse("header.vm") ##包含文本加参数
+
+#macro (render_color, $color, $index)
+Color By Macro $index, $color
+#end
+
+#foreach ($color in $colors)
+    #render_color($color, $foreach.index)
+#end
+
+#set($hello = "hello")
+#set($hworld1 = "$!{hello} world") #双引号才会解析
+#set($hworld2 = '$!{hello} world')
+
+hworld1 : $!{hworld1}
+hworld2 : $!{hworld2}
+
+</pre>
+</body>
+</html>
