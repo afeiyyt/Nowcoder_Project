@@ -19,7 +19,7 @@ import javax.servlet.http.HttpSession;
 import java.lang.reflect.Array;
 import java.util.*;
 
-@Controller
+//@Controller
 public class IndexController {
     private static final Logger logger = LoggerFactory.getLogger(LogAspect.class);
 
